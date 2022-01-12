@@ -35,25 +35,25 @@ myDiv.appendChild(myH2); //then append the h2 to the div
 does h${i} work to create multiple headers?
 */
 
-let myH3 = document.createElement('h3'); 
-let myH3Text = document.createTextNode('This is an h3');  
-myH3.appendChild(myH3Text); 
+let myH3 = document.createElement('h3');
+let myH3Text = document.createTextNode('This is an h3');
+myH3.appendChild(myH3Text);
 myDiv.appendChild(myH3);
 
-let myH4 = document.createElement('h4'); 
-let myH4Text = document.createTextNode('This is an h4'); 
-myH4.appendChild(myH4Text); 
-myDiv.appendChild(myH4); 
+let myH4 = document.createElement('h4');
+let myH4Text = document.createTextNode('This is an h4');
+myH4.appendChild(myH4Text);
+myDiv.appendChild(myH4);
 
-let myH5 = document.createElement('h5'); 
-let myH5Text = document.createTextNode('This is an h5'); 
-myH5.appendChild(myH5Text); 
+let myH5 = document.createElement('h5');
+let myH5Text = document.createTextNode('This is an h5');
+myH5.appendChild(myH5Text);
 myDiv.appendChild(myH5);
 
-let myH6 = document.createElement('h6'); 
-let myH6Text = document.createTextNode('This is an h6'); 
-myH6.appendChild(myH6Text); 
-myDiv.appendChild(myH6); 
+let myH6 = document.createElement('h6');
+let myH6Text = document.createTextNode('This is an h6');
+myH6.appendChild(myH6Text);
+myDiv.appendChild(myH6);
 
 /*
 7: Give each heading element a class name that represents what type of heading element it is. If it is an h1, the class should be "h1".
@@ -72,41 +72,50 @@ myH6.className = "h6";
 >> I wasnt sure how to attach an event listener to the div parent of the headers that would change the color when double-clicked
 */
 
-let pallette =["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Blue", "BlueViolet", "Crimson"]; // creates an array with HTML named colors
+let pallette = ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Blue", "BlueViolet", "Crimson"]; // creates an array with HTML named colors
 
 
-myH1.addEventListener("dblclick", function() {
+myH1.addEventListener("dblclick", function () {
     let randNum = Math.floor(Math.random() * 9); //gives a random number between 0-8 inclusive
     myH1.style.color = pallette[randNum];
     //console.log("you changed the color to " + pallette[randNum]);
 });
 
-myH2.addEventListener("dblclick", function() {
+myH2.addEventListener("dblclick", function () {
     let randNum = Math.floor(Math.random() * 9);
     myH2.style.color = pallette[randNum];
     //console.log("you changed the color to " + pallette[randNum]);
 });
 
-myH3.addEventListener("dblclick", function() {
-    let randNum = Math.floor(Math.random() * 9); 
+myH3.addEventListener("dblclick", function () {
+    let randNum = Math.floor(Math.random() * 9);
     myH3.style.color = pallette[randNum];
     //console.log("you changed the color to " + pallette[randNum]);
 });
 
-myH4.addEventListener("dblclick", function() {
+myH4.addEventListener("dblclick", function () {
     let randNum = Math.floor(Math.random() * 9);
     myH4.style.color = pallette[randNum];
     //console.log("you changed the color to " + pallette[randNum]);
 });
 
-myH5.addEventListener("dblclick", function() {
-    let randNum = Math.floor(Math.random() * 9); 
+myH5.addEventListener("dblclick", function () {
+    let randNum = Math.floor(Math.random() * 9);
     myH5.style.color = pallette[randNum];
     //console.log("you changed the color to " + pallette[randNum]);
 });
 
-myH6.addEventListener("dblclick", function() {
+myH6.addEventListener("dblclick", function () {
     let randNum = Math.floor(Math.random() * 9);
     myH6.style.color = pallette[randNum];
     //console.log("you changed the color to " + pallette[randNum]);
 });
+
+/*
+9: Add a button in the index.html, give this button text that says "Click to add new list item", give the button a class name of your choosing.
+*/
+
+let myButton = document.createElement('button'); // Add a button in the index.html
+myButton.innerHTML = "Click to add new list item";  //give this button text that says "Click to add new list item"
+myButton.className = "button";
+myDiv.appendChild(myButton); // adds button to the div.  it will appead after the headers above since it is located below that those in the code.
