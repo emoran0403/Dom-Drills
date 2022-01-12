@@ -8,7 +8,7 @@ let myDiv = document.createElement('div');
 myDiv.className = "header-container";
 
 /*
-4: Create a h1 element, then create a text node with the text "This is an h1". Append the text to the h1 then append the h1 to the div, then append the div to the body.
+4: Create a h1 element then create a text node with the text "This is an h1" Append the text to the h1  then append the h1 to the div,  then append the div to the body.
 
 >> I learned that i need to have 'document.' before body so js 
 will recognize body as being from the document, and not a variable i've created in js
@@ -66,3 +66,7 @@ myH3.className = "h3";
 myH4.className = "h4";
 myH5.className = "h5";
 myH6.className = "h6";
+
+/*
+9: Create and array of 8 colors,  add an event listener that changes the color of a heading to a random color from the array when it is double clicked.
+*/

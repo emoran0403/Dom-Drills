@@ -1,0 +1,34 @@
+
+
+/*
+8: Go to styles.css and style each different heading element with a different color. Target the elements by class name.
+*/
+.h1 {
+    background-color: aqua;
+    color:blueviolet
+}
+
+.h2 {
+    background-color: blueviolet;
+    color: brown;
+}
+
+.h3 {
+    background-color: brown;
+    color: burlywood;
+}
+
+.h4 {
+    background-color: burlywood;
+    color: cadetblue;
+}
+
+.h5 {
+    background-color: cadetblue;
+    color: chartreuse;
+}
+
+.h6 {
+    background-color: chartreuse;
+    color: chocolate;
+}
