@@ -120,7 +120,16 @@ myH6.addEventListener("dblclick", function () {
 let myButton = document.createElement('button'); // Adds a button in the index.html
 myButton.innerHTML = "Click to add new list item";  //give this button text that says "Click to add new list item"
 myButton.type = "button"; //give the button a class name of your choosing.
-myButton.onclick = listAdder() //sets the onclick action to run the listAdder function
+
+/*
+12: Create an event listener that calls the new list item function every time the button is clicked.
+>>umm, nope im just going to add on click instead
+*/
+
+myButton.onclick = listAdder //sets the onclick action to run the listAdder function 
+/*
+>> i had myButton.onclick = listAdder() written initially, which apparently calls the funcion when the function is assigned to the button
+*/
 myDiv.appendChild(myButton); // adds button to the div.  it will appead after the headers above since it is located below that those in the code.
 
 /*
@@ -131,19 +140,13 @@ myDiv.appendChild(myButton); // adds button to the div.  it will appead after th
 
 let myList = document.createElement('ul'); //creates an empty list
 myDiv.appendChild(myList); //appends the empty list to the div
-//let n = 1 // number for the list item
-
-
-/*
-
-the function is having issues with scope i think.  each thing i try gives the console error: scripts.js:141 Uncaught ReferenceError: Cannot access 'myVariableNameHere' before initialization
-
-*/
-
+let n = 1 // number for the list item
 
 function listAdder() {
     var myLi = document.createElement('li');  // creates a list item
-    myLi.innerHTML = "This is list item " //+ n;  // sets the text on the list item to be "This is list Item n, where n starts at 1 and increases on each button press"
+    myLi.innerHTML = `This is list item ${n}`;  // sets the text on the list item to be "This is list Item n, where n starts at 1 and increases on each button press"
     myList.appendChild(myLi);  // appends the list item to the my List
-    //n = n + 1; // increments n by 1
+    n++; // increments n by 1
+    //console.log("button has been clicked!");
+    
 }
