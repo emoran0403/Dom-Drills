@@ -115,7 +115,35 @@ myH6.addEventListener("dblclick", function () {
 9: Add a button in the index.html, give this button text that says "Click to add new list item", give the button a class name of your choosing.
 */
 
-let myButton = document.createElement('button'); // Add a button in the index.html
+
+
+let myButton = document.createElement('button'); // Adds a button in the index.html
 myButton.innerHTML = "Click to add new list item";  //give this button text that says "Click to add new list item"
-myButton.className = "button";
+myButton.type = "button"; //give the button a class name of your choosing.
+myButton.onclick = listAdder() //sets the onclick action to run the listAdder function
 myDiv.appendChild(myButton); // adds button to the div.  it will appead after the headers above since it is located below that those in the code.
+
+/*
+11: In the scripts.js file, write a function that inserts a list item, have the first item say "This is list item 1" and any subsequent list item should have the number incremented by 1.
+*/
+
+
+
+let myList = document.createElement('ul'); //creates an empty list
+myDiv.appendChild(myList); //appends the empty list to the div
+//let n = 1 // number for the list item
+
+
+/*
+
+the function is having issues with scope i think.  each thing i try gives the console error: scripts.js:141 Uncaught ReferenceError: Cannot access 'myVariableNameHere' before initialization
+
+*/
+
+
+function listAdder() {
+    var myLi = document.createElement('li');  // creates a list item
+    myLi.innerHTML = "This is list item " //+ n;  // sets the text on the list item to be "This is list Item n, where n starts at 1 and increases on each button press"
+    myList.appendChild(myLi);  // appends the list item to the my List
+    //n = n + 1; // increments n by 1
+}
