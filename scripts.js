@@ -31,7 +31,8 @@ myDiv.appendChild(myH2); //then append the h2 to the div
 
 /*
 6: Repeat the following task for h3's through h6's.
->> there has to be a way to use a for loop to make this happen dynamically
+>> there has to be a way to use a for loop to make this happen dynamically.  the type of heading could be the iterating variable.  
+does h${i} work to create multiple headers?
 */
 
 let myH3 = document.createElement('h3'); 
@@ -53,3 +54,15 @@ let myH6 = document.createElement('h6');
 let myH6Text = document.createTextNode('This is an h6'); 
 myH6.appendChild(myH6Text); 
 myDiv.appendChild(myH6); 
+
+/*
+7: Give each heading element a class name that represents what type of heading element it is. If it is an h1, the class should be "h1".
+>> this could probably go in that for loop from step 6
+*/
+
+myH1.className = "h1";
+myH2.className = "h2";
+myH3.className = "h3";
+myH4.className = "h4";
+myH5.className = "h5";
+myH6.className = "h6";
