@@ -36,7 +36,7 @@ does h${i} work to create multiple headers?
 */
 
 let myH3 = document.createElement('h3'); 
-let myH3Text = document.createTextNode('This is an h3'); 
+let myH3Text = document.createTextNode('This is an h3');  
 myH3.appendChild(myH3Text); 
 myDiv.appendChild(myH3);
 
@@ -60,7 +60,7 @@ myDiv.appendChild(myH6);
 >> this could probably go in that for loop from step 6
 */
 
-myH1.className = "h1";
+myH1.className = "h1"; //sets the class name of each header
 myH2.className = "h2";
 myH3.className = "h3";
 myH4.className = "h4";
@@ -69,4 +69,44 @@ myH6.className = "h6";
 
 /*
 9: Create and array of 8 colors,  add an event listener that changes the color of a heading to a random color from the array when it is double clicked.
+>> I wasnt sure how to attach an event listener to the div parent of the headers that would change the color when double-clicked
 */
+
+let pallette =["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Blue", "BlueViolet", "Crimson"]; // creates an array with HTML named colors
+
+
+myH1.addEventListener("dblclick", function() {
+    let randNum = Math.floor(Math.random() * 9); //gives a random number between 0-8 inclusive
+    myH1.style.color = pallette[randNum];
+    //console.log("you changed the color to " + pallette[randNum]);
+});
+
+myH2.addEventListener("dblclick", function() {
+    let randNum = Math.floor(Math.random() * 9);
+    myH2.style.color = pallette[randNum];
+    //console.log("you changed the color to " + pallette[randNum]);
+});
+
+myH3.addEventListener("dblclick", function() {
+    let randNum = Math.floor(Math.random() * 9); 
+    myH3.style.color = pallette[randNum];
+    //console.log("you changed the color to " + pallette[randNum]);
+});
+
+myH4.addEventListener("dblclick", function() {
+    let randNum = Math.floor(Math.random() * 9);
+    myH4.style.color = pallette[randNum];
+    //console.log("you changed the color to " + pallette[randNum]);
+});
+
+myH5.addEventListener("dblclick", function() {
+    let randNum = Math.floor(Math.random() * 9); 
+    myH5.style.color = pallette[randNum];
+    //console.log("you changed the color to " + pallette[randNum]);
+});
+
+myH6.addEventListener("dblclick", function() {
+    let randNum = Math.floor(Math.random() * 9);
+    myH6.style.color = pallette[randNum];
+    //console.log("you changed the color to " + pallette[randNum]);
+});
