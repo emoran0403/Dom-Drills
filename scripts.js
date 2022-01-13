@@ -142,11 +142,36 @@ let myList = document.createElement('ul'); //creates an empty list
 myDiv.appendChild(myList); //appends the empty list to the div
 let n = 1 // number for the list item
 
-function listAdder() {
+function liColor() {
+    let randNum = Math.floor(Math.random() * 9);
+    myLi.style.color = pallette[randNum];
+
+}
+
+/*
+13: Using the same random color function created above, apply an event listener that when a list item is clicked once, it changes the color of the font to one fo the 8 random colors.
+*/
+
+/*
+14: Create a function that if a list item is double clicked it removes the list item from the DOM.
+*/
+
+function listAdder() { //creates the list adder function
     var myLi = document.createElement('li');  // creates a list item
-    myLi.innerHTML = `This is list item ${n}`;  // sets the text on the list item to be "This is list Item n, where n starts at 1 and increases on each button press"
+    myLi.innerHTML = `This is list item ${n}`;  // sets the text on the list item to be "This is list Item n, where n starts at 1 and increases on each button press" >>yay template literals!
     myList.appendChild(myLi);  // appends the list item to the my List
+    myLi.addEventListener("click", function () { //this adds an event listener to each newly created li, and calls the anonymous function to change the text color when the li is clicked
+        let randNum = Math.floor(Math.random() * 9);
+        myLi.style.color = pallette[randNum];
+    });
+    myLi.addEventListener("dblclick", function () { //this adds an event listener to each newly created li, and calls the anonymous function to remove it from the DOM when it is double clicked
+        //"hey siri, how do i abort children nodes in javascript?"
+        // myLi.style.display = "none";>> is for losers
+        console.log(`%c '${this.innerHTML}' has been removed 😉`, "font-weight: bold; font-size: 8em;"); //logs which li has been deleted from the DOM
+        this.remove();
+    });
+    myLi.setAttribute("id", n); // sets the attribute to the current n
     n++; // increments n by 1
     //console.log("button has been clicked!");
-    
+
 }
